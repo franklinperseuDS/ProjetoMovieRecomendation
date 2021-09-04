@@ -6,7 +6,7 @@ import json
 filmes = pd.read_csv("movies.csv")
 classess = pd.read_csv("processed_movies.csv")
 
-
+print(classess.info())
 
 classe_final = 3
 grupo_classificados = classess[classess["class"] == classe_final]
