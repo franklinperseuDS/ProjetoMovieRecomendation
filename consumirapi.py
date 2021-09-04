@@ -11,10 +11,7 @@ import json
 filmes = pd.read_csv("movies.csv")
 classes_filmes = pd.read_csv("filmes-Final.csv")
 
-st.markdown("nome dos filmes")
-st.markdown(filmes.head(3))
-st.markdown("as classes:::")
-st.markdown(classes_filmes.head(3))
+
 # título
 st.title("Web Movies Recomendation") 
 # subtítulo
@@ -116,16 +113,11 @@ if btn_predict:
         classes_filmes =  classes_filmes[classes_filmes["class"] == label_retorno]
         st.markdown(classes_filmes.head(3))
         # classes_filmes =  classes_filmes.sort_values(by=['nota_media'], ascending=False)
-        # grupo_classificados = grupo_classificados[grupo_classificados["nota_media"] > 3]
-        # grupo_classificados = grupo_classificados.sample(n=5)
-        # for i in range(3):
-            # st.markdown(filmes["title"][filmes["movieId"] == grupo_classificados.iloc[i,0]])
-        # st.markdown(m['Scored Labels'])
-        # st.markdown(m)
-        # if m['Scored Labels'] == '1':
-        #     st.markdown("Previsão de Risco = Baixo Risco")
-        # else:
-        #     st.markdown("Previsão de Risco = Alto Risco")
+        classes_filmes = classes_filmes[classes_filmes["nota_media"] > 3]
+        classes_filmes = classes_filmes.sample(n=5)
+        for i in range(5):
+            st.markdown(filmes["title"][filmes["movieId"] == classes_filmes.iloc[i,0]])
+    
             
        
                  
