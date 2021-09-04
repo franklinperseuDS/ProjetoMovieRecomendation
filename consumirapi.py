@@ -66,7 +66,7 @@ if Drama:
 else:
     Drama = 0
 # Documentary = st.text_input("Documentary", key="Documentary", value=0)
-Documentary = st.checkbox("Comedy")
+Documentary = st.checkbox("Documentary")
 if Documentary:
     Documentary = 1
 else:
