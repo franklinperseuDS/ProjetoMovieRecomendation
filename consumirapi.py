@@ -19,27 +19,27 @@ st.markdown("equipe: A,F,F,W")
        #'Mystery', 'Comedy', 'Fantasy', 'War', 'Animation', 'Romance', 'IMAX',
        #'Horror', 'Crime', 'Action', 'Children', 'Drama', 'Sci-Fi', 'class']
 
-Col1 = st.text_input("filme Id", key="Col1", value=0)
+filmeId = st.text_input("filme Id", key="filmeId", value=0)
 Col2 = st.text_input("Nota", key="Col2", value=0)
-Col3 = st.text_input("Thriller", key="Col3", value=0)
-Col4 = st.text_input("Musical", key="Col4", value=0)
-Col5 = st.text_input("Adventure", key="Col5", value=0)
-Col6 = st.text_input("Western", key="Col6", value=0)
-Col7 = st.text_input("Mystery", key="Col7", value=0)
-Col8 = st.text_input("Comedy", key="Col8", value=0)
-Col9 = st.text_input("Fantasy", key="Col9", value=0)
-Col10 = st.text_input("War", key="Col10", value=0)
-Col11 = st.text_input("Animation", key="Col11", value=0)
-Col12 = st.text_input("Romance", key="Col12", value=0)
-Col13 = st.text_input("IMAX", key="Col13", value=0)
-Col14 = st.text_input("Horror", key="Col14", value=0)
-Col15 = st.text_input("Crime", key="Col15", value=0)
-Col16 = st.text_input("Action", key="Col16", value=0)
-Col17 = st.text_input("Children", key="Col17", value=0)
-Col18 = st.text_input("Drama", key="Col18", value=0)
-Col19 = st.text_input("Sci-Fi", key="Col19", value=0)
-Col20 = st.text_input("class", key="Col20", value=0)
-
+Thriller = st.text_input("Thriller", key="Thriller", value=0)
+Musical = st.text_input("Musical", key="Musical", value=0)
+Adventure = st.text_input("Adventure", key="Adventure", value=0)
+Western = st.text_input("Western", key="Western", value=0)
+Mystery = st.text_input("Mystery", key="Mystery", value=0)
+Comedy = st.text_input("Comedy", key="Comedy", value=0)
+Fantasy = st.text_input("Fantasy", key="Fantasy", value=0)
+War = st.text_input("War", key="War", value=0)
+Animation = st.text_input("Animation", key="Animation", value=0)
+Romance = st.text_input("Romance", key="Romance", value=0)
+IMAX = st.text_input("IMAX", key="IMAX", value=0)
+Horror = st.text_input("Horror", key="Horror", value=0)
+Crime = st.text_input("Crime", key="Crime", value=0)
+Action = st.text_input("Action", key="Action", value=0)
+Children = st.text_input("Children", key="Children", value=0)
+Drama = st.text_input("Drama", key="Drama", value=0)
+SciFi = st.text_input("Sci-Fi", key="SciFi", value=0)
+FilmNoir = st.text_input("Film-Noir", key="FilmNoir", value=0)
+Documentary = st.text_input("Documentary", key="Documentary", value=0)
 # inserindo um botão na tela
 btn_predict = st.button("Realizar Previsão")
 
@@ -49,27 +49,35 @@ if btn_predict:
                 "input1":
                 [
                     {
-                            'Col1': Col1,   
-                            'Col2': Col2,   
-                            'Col3': Col3,   
-                            'Col4': Col4,   
-                            'Col5': Col5,   
-                            'Col6': Col6,   
-                            'Col7': Col7,   
-                            'Col8': Col8,   
-                            'Col9': Col9,   
-                            'Col10': Col10,   
-                            'Col11': Col11,   
-                            'Col12': Col12,   
-                            'Col13': Col13,   
-                            'Col14': Col14,   
-                            'Col15': Col15,   
-                            'Col16': Col16,   
-                            'Col17': Col17,   
-                            'Col18': Col18,   
-                            'Col19': Col19,   
-                            'Col20': Col20,   
-                              
+                        'Column 0': "0",
+                        'index': "0",   
+                        'filmeId': filmeId,   
+                        'nota_media': "5",  
+                        'Horror': Horror,   
+                        'Crime': Crime,   
+                        'Children': Children,   
+                        'Thriller': Thriller,   
+                        'Film-Noir': FilmNoir,   
+                        'Documentary': Documentary,   
+                        'Fantasy': Fantasy,   
+                        '(no genres listed)': "0",   
+                        'Mystery': Mystery,   
+                        'Comedy': Comedy,   
+                        'Drama': Drama,   
+                        'Musical': Musical,   
+                        'Adventure': Adventure,   
+                        'Romance': Romance,   
+                        'War': War,   
+                        'Animation': Animation,   
+                        'IMAX': IMAX,   
+                        'Action': Action,   
+                        'Western': Western,   
+                        'Sci-Fi': SciFi,   
+                        'class': "1",     
+
+                               
+                             
+                            
                     }
                 ],
         },
