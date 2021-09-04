@@ -9,8 +9,8 @@ import urllib.request
 import json
 
 filmes = pd.read_csv("movies.csv")
-classes_filmes = pd.read_csv("filmes-Final.csv")
-
+# classes_filmes = pd.read_csv("filmes-Final.csv")
+classes_filmes = pd.read_csv("processed_movies_2.csv")
 
 # título
 st.title("Web Movies Recomendation") 
@@ -210,7 +210,7 @@ if btn_predict:
         classes_filmes =  classes_filmes[classes_filmes["class"] == label_retorno]      
         classes_filmes = classes_filmes.sample(n=5)
         for i in range(5):
-            st.markdown(filmes["title"][filmes["movieId"] == classes_filmes.iloc[i,1]].values)
+            st.markdown(filmes["title"][filmes["movieId"] == classes_filmes.iloc[i,0]].values)
             
     except urllib.error.HTTPError as error:
         print("The request failed with status code: " + str(error.code))
