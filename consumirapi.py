@@ -10,6 +10,11 @@ import json
 
 filmes = pd.read_csv("movies.csv")
 classes_filmes = pd.read_csv("processed_movies.csv")
+
+st.markdown("nome dos filmes")
+st.markdown(filmes.head(3))
+st.markdown("as classes:::")
+st.markdown(classes_filmes.head(3))
 # título
 st.title("Web Movies Recomendation") 
 # subtítulo
