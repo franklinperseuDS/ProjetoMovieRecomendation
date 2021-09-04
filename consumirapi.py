@@ -15,13 +15,13 @@ classes_filmes = pd.read_csv("filmes-Final.csv")
 # título
 st.title("Web Movies Recomendation") 
 # subtítulo
-st.markdown("equipe: Adiel Silva,Felipe Brasil,Franklin Perseu,William dos Santos")
+st.markdown("equipe: Adiel Silva, Felipe Brasil, Franklin Perseu, William dos Santos")
 # subtítulo
 st.markdown("Trabalho de apresentação para o módulo de computing clouding")
 
 
-st.markdown("Coloque um número randomico")
-filmeId = st.text_input("filme Id", key="filmeId", value=0)
+# st.markdown("Coloque um número randomico")
+# filmeId = st.text_input("filme Id", key="filmeId", value=0)
 st.markdown("Selecione as categorias Desejadas:")
 # Adventure = st.text_input("Adventure", key="Adventure", value=0)
 Adventure = st.checkbox("Adventure")
@@ -151,7 +151,7 @@ if btn_predict:
                 [
                     {
                         'Column 0': "0",
-                        'filmeId': filmeId,   
+                        'filmeId': "1",   
                         'nota_media': "5",  
                         'Horror': Horror,   
                         'Crime': Crime,   
@@ -183,8 +183,11 @@ if btn_predict:
 
     body = str.encode(json.dumps(data))
 
-    url = 'https://ussouthcentral.services.azureml.net/workspaces/88cee1267b3f4781be5764f390ed1fa2/services/f1e5d50315564cc3ab193edfeea56489/execute?api-version=2.0&format=swagger'
-    api_key = '6WkC96kzPJulU1jWjo76ZqZUVmBKiqrB6Adk7rROj/EKvEVVkfu3z45A/iSPpayY7aUM1T5bgr4NgPkzov5N6Q==' # Replace this with the API key for the web service
+    url = 'https://ussouthcentral.services.azureml.net/workspaces/88cee1267b3f4781be5764f390ed1fa2/services/a8a394e8054047aa97b3e932b21caa95/execute?api-version=2.0&format=swagger'
+    api_key = 'CCirVzTtQj3meO/D1MdYxlKdzaYTNoPtm9hJRrb8CNG7fCOEHDczlGfakhxQ/76dRzz6G5iB4zgEQtnWQlyEtg==' 
+
+    # url = 'https://ussouthcentral.services.azureml.net/workspaces/88cee1267b3f4781be5764f390ed1fa2/services/f1e5d50315564cc3ab193edfeea56489/execute?api-version=2.0&format=swagger'
+    # api_key = '6WkC96kzPJulU1jWjo76ZqZUVmBKiqrB6Adk7rROj/EKvEVVkfu3z45A/iSPpayY7aUM1T5bgr4NgPkzov5N6Q==' # Replace this with the API key for the web service
     headers = {'Content-Type':'application/json', 'Authorization':('Bearer '+ api_key)}
 
     req = urllib.request.Request(url, body, headers)
