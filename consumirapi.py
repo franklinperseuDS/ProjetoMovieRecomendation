@@ -9,6 +9,7 @@ import urllib.request
 import json
 
 filmes = pd.read_csv("movies.csv")
+classes_filmes = pd.read_csv("processed_movies")
 # título
 st.title("Web Movies Recomendation") 
 # subtítulo
@@ -21,7 +22,6 @@ st.markdown("Trabalho de apresentação para o módulo de computing clouding")
        #'Horror', 'Crime', 'Action', 'Children', 'Drama', 'Sci-Fi', 'class']
 
 filmeId = st.text_input("filme Id", key="filmeId", value=0)
-
 Thriller = st.text_input("Thriller", key="Thriller", value=0)
 Musical = st.text_input("Musical", key="Musical", value=0)
 Adventure = st.text_input("Adventure", key="Adventure", value=0)
@@ -51,7 +51,6 @@ if btn_predict:
                 [
                     {
                         'Column 0': "0",
-                        'index': "0",   
                         'filmeId': filmeId,   
                         'nota_media': "5",  
                         'Horror': Horror,   
@@ -61,7 +60,6 @@ if btn_predict:
                         'Film-Noir': FilmNoir,   
                         'Documentary': Documentary,   
                         'Fantasy': Fantasy,   
-                        '(no genres listed)': "0",   
                         'Mystery': Mystery,   
                         'Comedy': Comedy,   
                         'Drama': Drama,   
@@ -74,7 +72,7 @@ if btn_predict:
                         'Action': Action,   
                         'Western': Western,   
                         'Sci-Fi': SciFi,   
-                        'class': "1",     
+                        'class': "0",     
 
                                
                              
@@ -88,8 +86,8 @@ if btn_predict:
 
     body = str.encode(json.dumps(data))
 
-    url = 'https://ussouthcentral.services.azureml.net/workspaces/88cee1267b3f4781be5764f390ed1fa2/services/44e7c9a8cbad464bb360b96f4cba0fc9/execute?api-version=2.0&format=swagger'
-    api_key = 'nEt2xrG1hoA+R5/YqEj67p8nvIiChhJkOMENUe8CyPcRZ3ti+jnJAtHqnVjN1a3+A/2gN2kzdbPhedJT35IP8g==' # Replace this with the API key for the web service
+    url = 'https://ussouthcentral.services.azureml.net/workspaces/88cee1267b3f4781be5764f390ed1fa2/services/f1e5d50315564cc3ab193edfeea56489/execute?api-version=2.0&format=swagger'
+    api_key = '6WkC96kzPJulU1jWjo76ZqZUVmBKiqrB6Adk7rROj/EKvEVVkfu3z45A/iSPpayY7aUM1T5bgr4NgPkzov5N6Q==' # Replace this with the API key for the web service
     headers = {'Content-Type':'application/json', 'Authorization':('Bearer '+ api_key)}
 
     req = urllib.request.Request(url, body, headers)
@@ -105,6 +103,8 @@ if btn_predict:
         x = y['Results']
         z = x['output1']
         m = z[0]
+
+        classe_final = m['Scored Labels']
         st.markdown(m['Scored Labels'])
         st.markdown(m)
         if m['Scored Labels'] == '1':
