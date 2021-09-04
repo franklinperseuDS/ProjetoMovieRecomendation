@@ -10,10 +10,11 @@ import json
 
 filmes = pd.read_csv("movies.csv")
 # título
-st.title("Web Data movies Recomendation") 
+st.title("Web Movies Recomendation") 
 # subtítulo
-st.markdown("equipe: A,F,F,W")
+st.markdown("equipe: Adiel Silva,Felipe Brasil,Franklin Perseu,William dos Santos")
 # subtítulo
+st.markdown("Trabalho de apresentação para o módulo de computing clouding")
 
 #['filmeId', 'nota_media', 'Thriller', 'Musical', 'Adventure', 'Western',
        #'Mystery', 'Comedy', 'Fantasy', 'War', 'Animation', 'Romance', 'IMAX',
