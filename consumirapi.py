@@ -201,7 +201,7 @@ if btn_predict:
         z = x['output1']
         m = z[0]
 
-        st.markdown(z)
+        # st.markdown(z)
 
         label_retorno = int(m['Scored Labels'])
         classes_filmes =  classes_filmes[classes_filmes["class"] == label_retorno]      
