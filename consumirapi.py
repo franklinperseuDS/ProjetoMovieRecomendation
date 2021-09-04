@@ -107,11 +107,11 @@ if btn_predict:
         classe_final = m['Scored Labels']
         
         
-        grupo_classificados =  classes_filmes[classes_filmes["class"] == m["Scored Labels"]]
+        grupo_classificados =  classes_filmes[classes_filmes["class"] == classe_final]
 
         grupo_classificados =  grupo_classificados.sort_values(by=['nota_media'], ascending=False)
         grupo_classificados = grupo_classificados[grupo_classificados["nota_media"] > 3]
-        grupo_classificados = grupo_classificados.sample(n=5)
+        # grupo_classificados = grupo_classificados.sample(n=5)
         for i in range(5):
             st.markdown(filmes["title"][filmes["movieId"] == grupo_classificados.iloc[i,1]])
         # st.markdown(m['Scored Labels'])
