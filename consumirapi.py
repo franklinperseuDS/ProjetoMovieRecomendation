@@ -17,7 +17,8 @@ st.title("Web Movies Recomendation")
 # subtítulo
 st.markdown("equipe: Adiel Silva, Felipe Brasil, Franklin Perseu, William dos Santos")
 # subtítulo
-st.markdown("Trabalho de apresentação para o módulo de computing clouding")
+st.markdown("Trabalho de apresentação para o módulo:")
+st.markdown("Infraestrutura em Nuvem para Projetos com Ciência dos Dados")
 
 
 # st.markdown("Coloque um número randomico")
