@@ -19,30 +19,33 @@ st.markdown("equipe: Adiel Silva,Felipe Brasil,Franklin Perseu,William dos Santo
 # subtítulo
 st.markdown("Trabalho de apresentação para o módulo de computing clouding")
 
-#['filmeId', 'nota_media', 'Thriller', 'Musical', 'Adventure', 'Western',
-       #'Mystery', 'Comedy', 'Fantasy', 'War', 'Animation', 'Romance', 'IMAX',
-       #'Horror', 'Crime', 'Action', 'Children', 'Drama', 'Sci-Fi', 'class']
 
+st.markdown("Coloque um número randomico")
 filmeId = st.text_input("filme Id", key="filmeId", value=0)
-Thriller = st.text_input("Thriller", key="Thriller", value=0)
-Musical = st.text_input("Musical", key="Musical", value=0)
-Adventure = st.text_input("Adventure", key="Adventure", value=0)
-Western = st.text_input("Western", key="Western", value=0)
-Mystery = st.text_input("Mystery", key="Mystery", value=0)
-Comedy = st.text_input("Comedy", key="Comedy", value=0)
-Fantasy = st.text_input("Fantasy", key="Fantasy", value=0)
-War = st.text_input("War", key="War", value=0)
+st.markdown("Para as categorias :entre com 0 ou 1")
+# Adventure = st.text_input("Adventure", key="Adventure", value=0)
 Animation = st.text_input("Animation", key="Animation", value=0)
-Romance = st.text_input("Romance", key="Romance", value=0)
-IMAX = st.text_input("IMAX", key="IMAX", value=0)
-Horror = st.text_input("Horror", key="Horror", value=0)
-Crime = st.text_input("Crime", key="Crime", value=0)
 Action = st.text_input("Action", key="Action", value=0)
+Comedy = st.text_input("Comedy", key="Comedy", value=0)
+Crime = st.text_input("Crime", key="Crime", value=0)
 Children = st.text_input("Children", key="Children", value=0)
 Drama = st.text_input("Drama", key="Drama", value=0)
-SciFi = st.text_input("Sci-Fi", key="SciFi", value=0)
-FilmNoir = st.text_input("Film-Noir", key="FilmNoir", value=0)
 Documentary = st.text_input("Documentary", key="Documentary", value=0)
+FilmNoir = st.text_input("Film-Noir", key="FilmNoir", value=0)
+Fantasy = st.text_input("Fantasy", key="Fantasy", value=0)
+Horror = st.text_input("Horror", key="Horror", value=0)
+IMAX = st.text_input("IMAX", key="IMAX", value=0)
+Romance = st.text_input("Romance", key="Romance", value=0)
+SciFi = st.text_input("Sci-Fi", key="SciFi", value=0)
+Thriller = st.text_input("Thriller", key="Thriller", value=0)
+Musical = st.text_input("Musical", key="Musical", value=0)
+Mystery = st.text_input("Mystery", key="Mystery", value=0)
+War = st.text_input("War", key="War", value=0)
+Western = st.text_input("Western", key="Western", value=0)
+
+Adventure = st.checkbox("Adventure")
+if Adventure:
+    st.checkbox("Adventure", value = 1)
 # inserindo um botão na tela
 btn_predict = st.button("Realizar Previsão")
 
@@ -76,9 +79,6 @@ if btn_predict:
                         'Sci-Fi': SciFi,   
                         'class': "0",     
 
-                               
-                             
-                            
                     }
                 ],
         },
@@ -106,17 +106,13 @@ if btn_predict:
         z = x['output1']
         m = z[0]
 
-        # st.markdown("A classe do filme" ,m['Scored Labels'])
+        st.markdown(z)
+
         label_retorno = int(m['Scored Labels'])
-        
-        
         classes_filmes =  classes_filmes[classes_filmes["class"] == label_retorno]      
-        # classes_filmes = classes_filmes[classes_filmes["nota_media"] > 3]
         classes_filmes = classes_filmes.sample(n=5)
-        st.markdown(classes_filmes)
         for i in range(5):
             st.markdown(filmes["title"][filmes["movieId"] == classes_filmes.iloc[i,1]].values)
-        
             
     except urllib.error.HTTPError as error:
         print("The request failed with status code: " + str(error.code))
