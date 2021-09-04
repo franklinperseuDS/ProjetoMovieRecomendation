@@ -105,12 +105,21 @@ if btn_predict:
         m = z[0]
 
         classe_final = m['Scored Labels']
-        st.markdown(m['Scored Labels'])
-        st.markdown(m)
-        if m['Scored Labels'] == '1':
-            st.markdown("Previsão de Risco = Baixo Risco")
-        else:
-            st.markdown("Previsão de Risco = Alto Risco")
+        
+        
+        grupo_classificados =  classes_filmes[classes_filmes["class"] == m["Scored Labels"]]
+
+        grupo_classificados =  grupo_classificados.sort_values(by=['nota_media'], ascending=False)
+        grupo_classificados = grupo_classificados[grupo_classificados["nota_media"] > 3]
+        grupo_classificados = grupo_classificados.sample(n=5)
+        for i in range(5):
+            st.markdown(filmes["title"][filmes["movieId"] == grupo_classificados.iloc[i,1]])
+        # st.markdown(m['Scored Labels'])
+        # st.markdown(m)
+        # if m['Scored Labels'] == '1':
+        #     st.markdown("Previsão de Risco = Baixo Risco")
+        # else:
+        #     st.markdown("Previsão de Risco = Alto Risco")
             
        
                  
