@@ -150,9 +150,9 @@ if btn_predict:
                 "input1":
                 [
                     {
-                        'Column 0': "0",
+                        
                         'filmeId': "1",   
-                        'nota_media': "5",  
+                        'nota_media': "1",  
                         'Horror': Horror,   
                         'Crime': Crime,   
                         'Children': Children,   
