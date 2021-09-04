@@ -9,7 +9,7 @@ import urllib.request
 import json
 
 filmes = pd.read_csv("movies.csv")
-classes_filmes = pd.read_csv("processed_movies")
+classes_filmes = pd.read_csv("processed_movies.csv")
 # título
 st.title("Web Movies Recomendation") 
 # subtítulo
