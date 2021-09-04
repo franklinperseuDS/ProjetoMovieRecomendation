@@ -20,7 +20,7 @@ st.markdown("equipe: A,F,F,W")
        #'Horror', 'Crime', 'Action', 'Children', 'Drama', 'Sci-Fi', 'class']
 
 filmeId = st.text_input("filme Id", key="filmeId", value=0)
-Col2 = st.text_input("Nota", key="Col2", value=0)
+
 Thriller = st.text_input("Thriller", key="Thriller", value=0)
 Musical = st.text_input("Musical", key="Musical", value=0)
 Adventure = st.text_input("Adventure", key="Adventure", value=0)
