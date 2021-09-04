@@ -4,23 +4,16 @@ import urllib.request
 import json
 
 filmes = pd.read_csv("movies.csv")
-classess = pd.read_csv("filmes-Final.csv")
+classes_filmes = pd.read_csv("filmes-Final.csv")
 
 # print(classess.info())
 
-classe_final = 3
-grupo_classificados = classess[classess["class"] == classe_final]
+label_retorno = 7
+classes_filmes =  classes_filmes[classes_filmes["class"] == label_retorno]      
+# classes_filmes = classes_filmes[classes_filmes["nota_media"] > 3]
+classes_filmes = classes_filmes.sample(n=5)
+print(classes_filmes.head())
+for i in range(5):
+    print(filmes["title"][filmes["movieId"] == classes_filmes.iloc[i,1]].values)
 
-grupo_classificados =  grupo_classificados.sort_values(by=['nota_media'], ascending=False)
-
-grupo_classificados = grupo_classificados[grupo_classificados["nota_media"] > 3]
-grupo_classificados = grupo_classificados.sample(n=5)
-for i in range(3):
-# print(grupo_classificados.values)
-    print(filmes['title'][filmes["movieId"] == grupo_classificados.iloc[i,1]].values)
-    # print(retornado[1])
-    # print(filmes['title'][filmes["movieId"] == grupo_classificados.iloc[i,1]])
-    # retorno_filme = filmes["title"][filmes["movieId"] == grupo_classificados.iloc[i,0]]
-    # if retorno_filme:
-        # print(retorno_filme)
-
+#6316          4876          5785         5784  7764                   

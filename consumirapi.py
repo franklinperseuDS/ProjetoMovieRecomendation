@@ -106,18 +106,16 @@ if btn_predict:
         z = x['output1']
         m = z[0]
 
-        st.markdown("A classe do filme" ,m['Scored Labels'])
+        # st.markdown("A classe do filme" ,m['Scored Labels'])
         label_retorno = int(m['Scored Labels'])
         
         
-        classes_filmes =  classes_filmes[classes_filmes["class"] == label_retorno]
-        
-        
+        classes_filmes =  classes_filmes[classes_filmes["class"] == label_retorno]      
         # classes_filmes = classes_filmes[classes_filmes["nota_media"] > 3]
         classes_filmes = classes_filmes.sample(n=5)
         st.markdown(classes_filmes)
         for i in range(5):
-            st.markdown(filmes["title"][filmes["movieId"] == classes_filmes.iloc[i,0]].values)
+            st.markdown(filmes["title"][filmes["movieId"] == classes_filmes.iloc[i,1]].values)
         
             
     except urllib.error.HTTPError as error:
