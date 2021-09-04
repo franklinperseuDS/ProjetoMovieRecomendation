@@ -106,13 +106,13 @@ if btn_predict:
         z = x['output1']
         m = z[0]
 
-        st.markdown(m['Scored Labels'])
+        #st.markdown("A classe do filme" ,m['Scored Labels'])
         label_retorno = int(m['Scored Labels'])
         
         
         classes_filmes =  classes_filmes[classes_filmes["class"] == label_retorno]
-        st.markdown(classes_filmes.head(3))
-        # classes_filmes =  classes_filmes.sort_values(by=['nota_media'], ascending=False)
+        
+        
         classes_filmes = classes_filmes[classes_filmes["nota_media"] > 3]
         classes_filmes = classes_filmes.sample(n=5)
         for i in range(5):
