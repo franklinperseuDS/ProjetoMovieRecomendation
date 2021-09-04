@@ -9,7 +9,7 @@ import urllib.request
 import json
 
 filmes = pd.read_csv("movies.csv")
-classes_filmes = pd.read_csv("filmes_Final.csv")
+classes_filmes = pd.read_csv("filmes-Final.csv")
 
 st.markdown("nome dos filmes")
 st.markdown(filmes.head(3))
