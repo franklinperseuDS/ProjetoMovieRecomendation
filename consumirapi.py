@@ -131,7 +131,7 @@ if War:
     War = 1
 else:
     War = 0
-Western = st.text_input("Western", key="Western", value=0)
+# Western = st.text_input("Western", key="Western", value=0)
 Western = st.checkbox("Western")
 if Western:
     Western = 1
