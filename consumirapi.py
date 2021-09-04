@@ -104,6 +104,7 @@ if btn_predict:
         z = x['output1']
         m = z[0]
 
+        st.markdown(m['Scored Labels'])
         classe_final = m['Scored Labels']
         
         
