@@ -113,14 +113,10 @@ if btn_predict:
         classes_filmes =  classes_filmes[classes_filmes["class"] == label_retorno]
         
         
-        classes_filmes = classes_filmes[classes_filmes["nota_media"] > 3]
+        # classes_filmes = classes_filmes[classes_filmes["nota_media"] > 3]
         classes_filmes = classes_filmes.sample(n=5)
         for i in range(5):
-            st.markdown(filmes["title"][filmes["movieId"] == classes_filmes.iloc[i,0]])
-    
-            
-       
-                 
+            st.markdown(filmes["title"][filmes["movieId"] == classes_filmes.iloc[i,0]].values)
         
             
     except urllib.error.HTTPError as error:
