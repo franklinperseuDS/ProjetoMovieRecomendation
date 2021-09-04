@@ -43,9 +43,8 @@ Mystery = st.text_input("Mystery", key="Mystery", value=0)
 War = st.text_input("War", key="War", value=0)
 Western = st.text_input("Western", key="Western", value=0)
 
-Adventure = st.checkbox("Adventure")
-if Adventure:
-    st.checkbox("Adventure", value = 1)
+Adventure = st.checkbox("Adventure", value = 1)
+
 # inserindo um botão na tela
 btn_predict = st.button("Realizar Previsão")
 
