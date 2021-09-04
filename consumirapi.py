@@ -106,7 +106,7 @@ if btn_predict:
         z = x['output1']
         m = z[0]
 
-        #st.markdown("A classe do filme" ,m['Scored Labels'])
+        st.markdown("A classe do filme" ,m['Scored Labels'])
         label_retorno = int(m['Scored Labels'])
         
         
