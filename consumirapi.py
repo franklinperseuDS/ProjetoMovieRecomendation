@@ -143,7 +143,7 @@ else:
 
 
 # inserindo um botão na tela
-btn_predict = st.button("Realizar Previsão")
+btn_predict = st.button("Recomendar Filmes!")
 
 if btn_predict:
     data = {
