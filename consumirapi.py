@@ -79,8 +79,8 @@ if btn_predict:
 
     body = str.encode(json.dumps(data))
 
-    url = 'https://ussouthcentral.services.azureml.net/workspaces/69230cb4ad874e3faaaf3661c7a32e4a/services/551db395143e46018c6eb1471622c270/execute?api-version=2.0&format=swagger'
-    api_key = 'jyOxencEHfed9nwFyQUkTG7r0xWbmJFXMvcsm9AfBVTh8tHZHKbz+/fTLuzC5ibEk7HvbM9b5VirmrS+GPBFnA==' # Replace this with the API key for the web service
+    url = 'https://ussouthcentral.services.azureml.net/workspaces/88cee1267b3f4781be5764f390ed1fa2/services/44e7c9a8cbad464bb360b96f4cba0fc9/execute?api-version=2.0&format=swagger'
+    api_key = 'nEt2xrG1hoA+R5/YqEj67p8nvIiChhJkOMENUe8CyPcRZ3ti+jnJAtHqnVjN1a3+A/2gN2kzdbPhedJT35IP8g==' # Replace this with the API key for the web service
     headers = {'Content-Type':'application/json', 'Authorization':('Bearer '+ api_key)}
 
     req = urllib.request.Request(url, body, headers)
