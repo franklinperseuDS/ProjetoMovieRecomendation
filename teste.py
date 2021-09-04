@@ -4,7 +4,7 @@ import urllib.request
 import json
 
 filmes = pd.read_csv("movies.csv")
-classess = pd.read_csv("processed_movies.csv")
+classess = pd.read_csv("filmes-Final.csv")
 
 print(classess.info())
 
@@ -16,6 +16,6 @@ grupo_classificados =  grupo_classificados.sort_values(by=['nota_media'], ascend
 grupo_classificados = grupo_classificados[grupo_classificados["nota_media"] > 3]
 grupo_classificados = grupo_classificados.sample(n=5)
 for i in range(3):
-    print(filmes[filmes["movieId"] == grupo_classificados.iloc[i,1]])
+    print(filmes['title'][filmes["movieId"] == grupo_classificados.iloc[i,1]])
 
 

@@ -110,7 +110,7 @@ if btn_predict:
         m = z[0]
 
         st.markdown(m['Scored Labels'])
-        label_retorno = m['Scored Labels']
+        label_retorno = int(m['Scored Labels'])
         
         
         classes_filmes =  classes_filmes[classes_filmes["class"] == label_retorno]
