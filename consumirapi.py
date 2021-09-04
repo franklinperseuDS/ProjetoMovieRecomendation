@@ -22,30 +22,124 @@ st.markdown("Trabalho de apresentação para o módulo de computing clouding")
 
 st.markdown("Coloque um número randomico")
 filmeId = st.text_input("filme Id", key="filmeId", value=0)
-st.markdown("Para as categorias :entre com 0 ou 1")
+st.markdown("Selecione as categorias Desejadas:")
 # Adventure = st.text_input("Adventure", key="Adventure", value=0)
-Animation = st.text_input("Animation", key="Animation", value=0)
-Action = st.text_input("Action", key="Action", value=0)
-Comedy = st.text_input("Comedy", key="Comedy", value=0)
-Crime = st.text_input("Crime", key="Crime", value=0)
-Children = st.text_input("Children", key="Children", value=0)
-Drama = st.text_input("Drama", key="Drama", value=0)
-Documentary = st.text_input("Documentary", key="Documentary", value=0)
-FilmNoir = st.text_input("Film-Noir", key="FilmNoir", value=0)
-Fantasy = st.text_input("Fantasy", key="Fantasy", value=0)
-Horror = st.text_input("Horror", key="Horror", value=0)
-IMAX = st.text_input("IMAX", key="IMAX", value=0)
-Romance = st.text_input("Romance", key="Romance", value=0)
-SciFi = st.text_input("Sci-Fi", key="SciFi", value=0)
-Thriller = st.text_input("Thriller", key="Thriller", value=0)
-Musical = st.text_input("Musical", key="Musical", value=0)
-Mystery = st.text_input("Mystery", key="Mystery", value=0)
-War = st.text_input("War", key="War", value=0)
-Western = st.text_input("Western", key="Western", value=0)
-
 Adventure = st.checkbox("Adventure")
 if Adventure:
     Adventure = 1
+else:
+     Adventure = 0
+# Animation = st.text_input("Animation", key="Animation", value=0)
+Animation = st.checkbox("Animation")
+if Animation:
+    Animation = 1
+else:
+    Animation = 0
+# Action = st.text_input("Action", key="Action", value=0)
+Action = st.checkbox("Action")
+if Action:
+    Action = 1
+else:
+    Action = 0
+# Comedy = st.text_input("Comedy", key="Comedy", value=0)
+Comedy = st.checkbox("Comedy")
+if Comedy:
+    Comedy = 1
+else:
+    Comedy = 0
+# Crime = st.text_input("Crime", key="Crime", value=0)
+Crime = st.checkbox("Crime")
+if Crime:
+    Crime = 1
+else:
+    Crime = 0
+# Children = st.text_input("Children", key="Children", value=0)
+Children = st.checkbox("Children")
+if Children:
+    Children = 1
+else:
+    Children = 0
+# Drama = st.text_input("Drama", key="Drama", value=0)
+Drama = st.checkbox("Drama")
+if Drama:
+    Drama = 1
+else:
+    Drama = 0
+# Documentary = st.text_input("Documentary", key="Documentary", value=0)
+Documentary = st.checkbox("Comedy")
+if Documentary:
+    Documentary = 1
+else:
+    Documentary = 0
+# FilmNoir = st.text_input("Film-Noir", key="FilmNoir", value=0)
+FilmNoir = st.checkbox("FilmNoir")
+if FilmNoir:
+    FilmNoir = 1
+else:
+    FilmNoir = 0
+# Fantasy = st.text_input("Fantasy", key="Fantasy", value=0)
+Fantasy = st.checkbox("Fantasy")
+if Fantasy:
+    Fantasy = 1
+else:
+    Fantasy = 0
+# Horror = st.text_input("Horror", key="Horror", value=0)
+Horror = st.checkbox("Horror")
+if Horror:
+    Horror = 1
+else:
+    Horror = 0
+# IMAX = st.text_input("IMAX", key="IMAX", value=0)
+IMAX = st.checkbox("IMAX")
+if IMAX:
+    IMAX = 1
+else:
+    IMAX = 0
+# Romance = st.text_input("Romance", key="Romance", value=0)
+Romance = st.checkbox("Romance")
+if Romance:
+    Romance = 1
+else:
+    Romance = 0
+# SciFi = st.text_input("Sci-Fi", key="SciFi", value=0)
+SciFi = st.checkbox("SciFi")
+if SciFi:
+    SciFi = 1
+else:
+    SciFi = 0
+# Thriller = st.text_input("Thriller", key="Thriller", value=0)
+Thriller = st.checkbox("Thriller")
+if Thriller:
+    Thriller = 1
+else:
+    Thriller = 0
+# Musical = st.text_input("Musical", key="Musical", value=0)
+Musical = st.checkbox("Musical")
+if Musical:
+    Musical = 1
+else: 
+    Musical = 0
+# Mystery = st.text_input("Mystery", key="Mystery", value=0)
+Mystery = st.checkbox("Mystery")
+if Mystery:
+    Mystery = 1
+else:
+    Mystery = 0 
+# War = st.text_input("War", key="War", value=0)
+War = st.checkbox("War")
+if War:
+    War = 1
+else:
+    War = 0
+Western = st.text_input("Western", key="Western", value=0)
+Western = st.checkbox("Western")
+if Western:
+    Western = 1
+else:
+    Western = 0
+
+
+
 
 # inserindo um botão na tela
 btn_predict = st.button("Realizar Previsão")
