@@ -15,7 +15,10 @@ classes_filmes = pd.read_csv("processed_movies_2.csv")
 # título
 st.title("Web Movies Recomendation") 
 # subtítulo
-st.markdown("equipe: Adiel Silva, Felipe Brasil, Franklin Perseu, William dos Santos")
+st.markdown("equipe: Adiel Silva - awbds.cid20@uea.edu.br ")
+st.markdown(" Felipe Brasil - fbg.cid20@uea.edu.br")
+st.markdown("Franklin Perseu - fpdll.cid20@uea.edu.br")
+st.markdown("William dos Santos - wdsa.cid20@uea.edu.br")
 # subtítulo
 st.markdown("Trabalho de apresentação para o módulo:")
 st.markdown("Infraestrutura em Nuvem para Projetos com Ciência dos Dados")
